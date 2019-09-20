@@ -9,7 +9,7 @@ const TodoList = props => {
                 {props.list.map( item => (
                     <Todo key={item.id} 
                           item={item} 
-                          select={props.select} />
+                          dispatch={props.dispatch} />
                     // <li key={index}>{item}</li>
                 ))}
             </ul>

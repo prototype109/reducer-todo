@@ -1,9 +1,11 @@
 import React from 'react';
 import './Todo.css';
 
-const Todo = ({item, select}) => {
-    return <li className={`item${item.completed ? ' selected' : ''}`}
-               onClick={() => select(item.id)} >{item.task}</li>
+const Todo = ({item, dispatch}) => {
+    return <li className={`${item.completed ? 'selected' : ''}`}
+               onClick={() => dispatch({type: 'TODO_SELECT', payload: item.id})}>
+                {item.item}
+               </li>
 }
 
 export default Todo;
