@@ -21,6 +21,12 @@ export const reducer = (state, action) => {
             return {
                 list: [...tempArr]
             }
+        case 'TODO_ADD':
+            return {
+                list: [...state.list, {item: action.payload, 
+                                  completed: false,
+                                  id: Date.now()}]
+            }
         default:
             return state;
     }

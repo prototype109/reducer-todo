@@ -30,7 +30,7 @@ function App () {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList list={state.list} dispatch={dispatch} />
-        {/* <TodoForm add={this.addToList} clear={this.clearList} /> */}
+        <TodoForm dispatch={dispatch} />
       </div>
     );
 }
