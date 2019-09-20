@@ -9,10 +9,10 @@ export const initialState = {
 }
 
 export const reducer = (state, action) => {
+    let tempArr = [...state.list];
     switch(action.type){
         case 'TODO_SELECT':
-            let tempArr = {...state};
-            tempArr = tempArr.list.map(item => {
+            tempArr = tempArr.map(item => {
                 if(item.id === action.payload)
                     item.completed = !item.completed;
                 
@@ -26,6 +26,11 @@ export const reducer = (state, action) => {
                 list: [...state.list, {item: action.payload, 
                                   completed: false,
                                   id: Date.now()}]
+            }
+        case 'TODO_CLEAR':
+            tempArr = tempArr.filter(item => !item.completed)
+            return {
+                list: [...tempArr]
             }
         default:
             return state;

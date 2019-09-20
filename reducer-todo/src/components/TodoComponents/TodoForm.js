@@ -13,9 +13,9 @@ function TodoForm({dispatch}){
         setItemInput('');
     }
 
-    // handleClick = () => {
-    //     this.props.clear();
-    // }
+    const handleClear = () => {
+        dispatch({type: 'TODO_CLEAR'})
+    }
 
     return(
         <form onSubmit={handleSubmit}>
@@ -23,7 +23,7 @@ function TodoForm({dispatch}){
                     value={itemInput} 
                     onChange={handleInput}/>
             <button type='submit'>Add Todo</button>
-            {/* <button type='button' onClick={this.handleClick}>Clear Completed</button> */}
+            <button type='button' onClick={handleClear}>Clear Completed</button>
         </form>
     )
 }
