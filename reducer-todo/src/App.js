@@ -2,10 +2,17 @@ import React, { useReducer } from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 import { initialState, reducer } from './reducers/reducer';
+import styled from 'styled-components';
+import image from './assets/todo-img.jpg';
 
 function App () {
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(state);
+
+  const Center = styled.div`
+    margin: 0 auto;
+    width: 20%;
+  `;
 
   // const toggleSelection = (itemId) => {
   //   this.setState({
@@ -27,11 +34,11 @@ function App () {
   // }
   
     return (
-      <div>
+      <Center>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList list={state.list} dispatch={dispatch} />
         <TodoForm dispatch={dispatch} />
-      </div>
+        <TodoList list={state.list} dispatch={dispatch} />
+      </Center>
     );
 }
 
