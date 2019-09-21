@@ -18,10 +18,11 @@ function TodoForm({dispatch}){
         border-radius: 4px;
     `;
 
-    const Input = styled.input`
-        margin: 0 18%;
-        width: 206px;
-    `;
+    const Input = {
+        margin: '0 18%',
+        width: '206px',
+        fontSize: '1.8rem'
+    }
 
     const [itemInput, setItemInput] = useState('');
 
@@ -41,9 +42,10 @@ function TodoForm({dispatch}){
 
     return(
         <form onSubmit={handleSubmit} style={FormComp}>
-            <Input type='text' 
+            <input type='text' 
                     value={itemInput} 
-                    onChange={handleInput}/>
+                    onChange={handleInput}
+                    style={Input}/>
             <Button type='submit'>Add Todo</Button>
             <Button type='button' onClick={handleClear}>Clear Completed</Button>
         </form>
