@@ -1,0 +1,32 @@
+html{
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url('../../assets/todo-img.jpg');
+    background-color: #f8f8f8;
+    background-size: auto 1300px;
+    background-repeat: no-repeat;
+}
+
+h2{
+    font-size: 3.0rem;
+}
+
+ul{
+    max-width: 50%;
+}
+
+li{
+    font-size: 2.0rem;
+    font-weight: bold;
+}
+
+.item{
+    text-decoration: initial;
+}
+
+.selected{
+    text-decoration: line-through;
+}
